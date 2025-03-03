@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  weaviate:
+    image: semitechnologies/weaviate:latest
+    container_name: weaviate
+    environment:
+      - QUERY_DEFAULTS_LIMIT=20
+      - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=true # 비공개 액세스를 허용하는 설정
+      - WEAVIATE_DEFAULT_CONTEXTIONARY=english
+    ports:
+      - "8080:8080" # Weaviate의 기본 포트는 8080입니다.
+    volumes:
+      - weaviate_data:/weaviate_db
+    networks:
+      - weaviate_network
+
+volumes:
+  weaviate_data:
+
+networks:
+  weaviate_network:
+    driver: bridge

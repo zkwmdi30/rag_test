@@ -1,0 +1,4 @@
+weaviate-client
+flask
+flask-cors
+openai
