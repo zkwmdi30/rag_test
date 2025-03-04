@@ -2,3 +2,6 @@ weaviate-client
 flask
 flask-cors
 openai
+langchain
+langchain-community
+tiktoken
